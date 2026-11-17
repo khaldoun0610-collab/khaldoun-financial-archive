@@ -799,7 +799,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function focusOnHighlightBox(element) {
-    element.scrollIntoView({ behavior: "smooth", block: "center" });
+    if (docImageContainer && element) {
+      // تمرير سلس فقط داخل حاوية الصورة دون إزاحة النافذة بالكامل
+      const containerRect = docImageContainer.getBoundingClientRect();
+      const elemRect = element.getBoundingClientRect();
+      if (elemRect.top < containerRect.top || elemRect.bottom > containerRect.bottom) {
+        element.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "nearest" });
+      }
+    }
     element.style.borderColor = "#fff";
     element.style.boxShadow = "0 0 25px #10b981";
     setTimeout(() => {

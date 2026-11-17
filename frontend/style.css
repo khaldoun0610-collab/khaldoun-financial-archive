@@ -2295,3 +2295,154 @@ body {
   gap: 8px;
 }
 
+
+
+/* ==========================================================================
+   📱 تحسينات التوافق التام مع الهواتف الذكية والشاشات الصغيرة (Mobile Responsiveness)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* الهيدر والعناوين */
+  .header-container {
+    padding: 10px 14px;
+    gap: 12px;
+  }
+
+  .brand-section {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .brand-info h1 {
+    font-size: 16px;
+  }
+
+  .brand-info p {
+    font-size: 11px;
+    display: none; /* إخفاء النص الطويل لتوفير مساحة الهاتف */
+  }
+
+  .copier-network-selector {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .selector-dropdown-group {
+    flex: 1;
+    min-width: 180px;
+  }
+
+  .header-actions {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: stretch;
+  }
+
+  .header-actions .btn {
+    flex: 1 1 calc(50% - 8px);
+    font-size: 12px;
+    padding: 8px 10px;
+    justify-content: center;
+  }
+
+  /* الإحصائيات السريعة */
+  .stats-bar-container {
+    padding: 10px 14px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px;
+  }
+
+  .stat-card {
+    padding: 12px;
+  }
+
+  .stat-val {
+    font-size: 18px;
+  }
+
+  /* التبويبات الرئيسية (أفقية قابلة للتمرير باللمس) */
+  .main-nav-tabs {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 8px 12px;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    gap: 8px;
+  }
+
+  .nav-tab-btn {
+    padding: 8px 14px;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  /* مساحة العمل والشبكة */
+  .main-workspace {
+    grid-template-columns: 1fr !important;
+    padding: 12px;
+    gap: 16px;
+  }
+
+  /* بطاقات المستندات وعرض الفواتير */
+  .documents-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px;
+  }
+
+  .document-card {
+    padding: 14px;
+  }
+
+  /* نوافذ العرض والـ Modals على الهاتف */
+  .modal-window {
+    width: 95% !important;
+    max-width: 95% !important;
+    margin: 10px auto;
+    max-height: 90vh;
+    padding: 16px;
+  }
+
+  /* أزرار الفلترة والبحث */
+  .filter-controls-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .filter-controls-row select,
+  .filter-controls-row input {
+    width: 100%;
+  }
+
+  /* بوت المساعد الذكي في الهاتف */
+  .ai-chat-drawer {
+    width: 100% !important;
+    height: 85vh !important;
+    bottom: 0;
+    right: 0;
+    border-radius: 20px 20px 0 0;
+  }
+
+  /* الجداول المالية تمكين السحب الأفقي المريح باللمس */
+  .table-responsive,
+  .responsive-table-container {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .header-actions .btn {
+    flex: 1 1 100%;
+  }
+}
